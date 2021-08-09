@@ -26,3 +26,17 @@ function showArtcal(data) {
     data_div.append(div);
   });
 }
+
+//search news
+
+async function searchNew() {
+  let inputValue = document.getElementById("inputvalue").value;
+  let res = await fetch(
+    `https://newsapi.org/v2/everything?q=${inputvalue}&from=2021-08-09&sortBy=popularity&apiKey=e308112c7b5348b7a70a4810ed9cd537`
+  );
+  let data = await res.json();
+  console.log(data);
+  let artical = data.articles;
+  console.log(artical);
+  showArtcal(artical);
+}
