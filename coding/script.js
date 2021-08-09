@@ -40,3 +40,4 @@ async function searchNew() {
   console.log(artical);
   showArtcal(artical);
 }
+export default script.js;
