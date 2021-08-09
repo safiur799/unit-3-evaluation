@@ -13,8 +13,16 @@ showNews();
 
 function showArtcal(data) {
   data.forEach((element) => {
+    let div = document.createElement("div");
     let title = document.createElement("p");
     let img = document.createElement("img");
     let para = document.createElement("para");
+
+    title.innerHTML = element.title;
+    img.src = element.urlToImage;
+    para.innerHTML = element.description;
+
+    div.append(title, img, para);
+    data_div.append(div);
   });
 }
